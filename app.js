@@ -51,7 +51,7 @@ app.get('/api/characters/:id', (req, res) => {
 
 // app.get('/api/characters/:id', (req, res) => {
 // 	const { id } = req.params;
-// 	const idNumero = Number(id); // Usa Number() que es más directo que parseInt
+// 	const idNumero = Number(id);
 
 // 	console.log(`Buscando personaje con ID: ${id}`);
 
@@ -63,7 +63,6 @@ app.get('/api/characters/:id', (req, res) => {
 // 		});
 // 	}
 
-// 	// Usamos find() para buscar el personaje directamente
 // 	const personaje = items.find((item) => item.id === idNumero);
 
 // 	if (personaje) {
@@ -88,3 +87,40 @@ app.use((req, res) => {
 app.listen(port, () => {
 	console.log(`Example app listening on Http://localhost:${port}`);
 });
+
+// app.get('/api/characters', (req, res) => {
+// 	console.log('Obteniendo lista de personajes con filtros (si hay)...');
+
+// 	const { name, race, affiliation } = req.query;
+
+// 	let resultados = items;
+
+// 	if (name) {
+// 		// Buscamos por nombre, sin importar mayúsculas o minúsculas
+// 		resultados = resultados.filter((item) =>
+// 			item.name.toLowerCase().includes(name.toLowerCase())
+// 		);
+// 	}
+
+// 	if (race) {
+// 		resultados = resultados.filter((item) =>
+// 			item.race.toLowerCase() === race.toLowerCase()
+// 		);
+// 	}
+
+// 	if (affiliation) {
+// 		resultados = resultados.filter((item) =>
+// 			item.affiliation.toLowerCase().includes(affiliation.toLowerCase())
+// 		);
+// 	}
+
+// 	if (resultados.length === 0) {
+// 		return res.status(404).json({
+// 			message: 'No se encontraron personajes con esos filtros.',
+// 			error: 404,
+// 		});
+// 	}
+
+// 	res.setHeader('Content-Type', 'application/json');
+// 	res.json({ cantidad: resultados.length, resultados });
+// });
