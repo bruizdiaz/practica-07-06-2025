@@ -11,8 +11,8 @@ import data from './database.js';
 const app = express();
 const port = 3000;
 const items = data.items;
-
 //--Declaraciones de constantes o variables--
+
 // GET sirve para solicitar datos cuando este en /api/characters.
 app.get('/api/characters', (req, res) => {
 	console.log('Obteniendo la lista de personajes de la MiniAPI-DragonBall.');
@@ -49,6 +49,7 @@ app.get('/api/characters/:id', (req, res) => {
 	});
 });
 
+//Si no encuentra una url especificada anteriormente tira un error.
 app.use((req, res) => {
 	return res.status(404).json({
 		error: 404,
