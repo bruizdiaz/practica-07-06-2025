@@ -49,6 +49,34 @@ app.get('/api/characters/:id', (req, res) => {
 	});
 });
 
+// app.get('/api/characters/:id', (req, res) => {
+// 	const { id } = req.params;
+// 	const idNumero = Number(id); // Usa Number() que es más directo que parseInt
+
+// 	console.log(`Buscando personaje con ID: ${id}`);
+
+// 	// Verificamos que el ID sea un número entero válido
+// 	if (!Number.isInteger(idNumero)) {
+// 		return res.status(400).json({
+// 			error: 400,
+// 			message: 'El parámetro ID no es un número válido.',
+// 		});
+// 	}
+
+// 	// Usamos find() para buscar el personaje directamente
+// 	const personaje = items.find((item) => item.id === idNumero);
+
+// 	if (personaje) {
+// 		res.setHeader('Content-Type', 'application/json');
+// 		return res.json(personaje);
+// 	}
+
+// 	// Si no lo encuentra, respondemos con un 404
+// 	return res.status(404).json({
+// 		error: 404,
+// 		message: 'Personaje no encontrado.',
+// 	});
+// });
 //Si no encuentra una url especificada anteriormente tira un error.
 app.use((req, res) => {
 	return res.status(404).json({
