@@ -89,7 +89,7 @@ app.listen(port, () => {
 });
 
 // app.get('/api/characters', (req, res) => {
-// 	console.log('Obteniendo lista de personajes con filtros (si hay)...');
+// 	console.log('Obteniendo lista de personajes con filtros');
 
 // 	const { name, race, affiliation } = req.query;
 
